@@ -11,19 +11,25 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn clean compile'
+                dir('selenium tests') {
+                    bat 'mvn clean compile'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                dir('selenium tests') {
+                    bat 'mvn test'
+                }
             }
         }
 
         stage('Publish Results') {
             steps {
-                junit 'target/surefire-reports/*.xml'
+                dir('selenium tests') {
+                    junit 'target/surefire-reports/*.xml'
+                }
             }
         }
     }
