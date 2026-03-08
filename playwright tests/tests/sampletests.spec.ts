@@ -26,9 +26,9 @@ test('register new user', async ({ page }) => {
     const welcomeText = await page.locator('.title').textContent();
 
 if (welcomeText?.includes(`Welcome ${username}`)) {
-    console.log("Test Passed: User successfully registered.");
+    console.log(`Test Passed: User ${username}successfully registered.`);
 } else {
-    console.log("Test Failed: Welcome message not displayed.");
+    console.log(`Test Failed: User ${username} not registered.`);
 }
   // Assuming it redirects to account overview
 });
