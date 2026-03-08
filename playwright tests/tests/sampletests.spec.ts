@@ -12,7 +12,7 @@ test('register new user', async ({ page }) => {
   await page.locator('#customer\\.address\\.zipCode').fill('12345');
   await page.locator('#customer\\.phoneNumber').fill('555-1234');
   await page.locator('#customer\\.ssn').fill('123-45-6789');
-  const username = 'johndoe1234'
+  const username = 'johndoe4'
   await page.locator('#customer\\.username').fill(username);
   await page.locator('#customer\\.password').fill('password123');
   await page.locator('#repeatedPassword').fill('password123');
