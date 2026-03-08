@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Selenium Test Suite">
+    <test name="Basic Selenium Tests">
+        <classes>
+            <class name="com.automation.tests.BasicSeleniumTest"/>
+        </classes>
+    </test>
+</suite>
