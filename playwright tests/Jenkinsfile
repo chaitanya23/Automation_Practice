@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/chaitanya23/Automation_Practice.git'
+            }
+        }
+
+        stage('Go to Playwright Folder') {
+            steps {
+                dir('playwright-tests') {
+                    bat 'npm ci'
+                }
+            }
+        }
+
+        stage('Install Playwright Browsers') {
+            steps {
+                dir('playwright-tests') {
+                    bat 'npx playwright install'
+                }
+            }
+        }
+
+        stage('Run Playwright Test') {
+            steps {
+                dir('playwright-tests') {
+                    bat 'npx playwright test tests/sampletests.spec.ts --project=chromium'
+                }
+            }
+        }
+    }
+}
