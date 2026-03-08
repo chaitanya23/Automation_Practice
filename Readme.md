@@ -8,6 +8,14 @@ This repository contains examples and practices for automation testing. Automati
 - **End-to-End Testing**: Simulating real user scenarios from start to finish.
 - **Tools**: Common tools include Selenium for web automation, JUnit/TestNG for Java, and Pytest for Python.
 
+### Local Testing
+To run tests locally:
+```bash
+cd "playwright tests"
+npm install
+npx playwright test
+```
+
 ## Getting Started
 1. Clone the repository.
 2. Install dependencies (e.g., via `pip install -r requirements.txt` for Python projects).
