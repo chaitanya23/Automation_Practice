@@ -10,7 +10,7 @@ pipeline {
 
         stage('Go to Playwright Folder') {
             steps {
-                dir('playwright-tests') {
+                dir('playwright tests') {
                     bat 'npm ci'
                 }
             }
