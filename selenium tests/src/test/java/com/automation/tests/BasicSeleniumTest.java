@@ -37,3 +37,4 @@ public class BasicSeleniumTest {
         }
     }
 }
+//added webhook to trigger automatically
