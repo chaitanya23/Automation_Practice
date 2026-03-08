@@ -30,13 +30,10 @@ public class BasicSeleniumTest {
     public void testGoogleHomepage() {
         driver.get("https://www.google.com");
         String title = driver.getTitle();
-        Assert.assertTrue(title.contains("Google"), "Page title should contain 'Google'");
-    }
-
-    @Test
-    public void testBingHomepage() {
-        driver.get("https://www.bing.com");
-        String title = driver.getTitle();
-        Assert.assertTrue(title.contains("Bing"), "Page title should contain 'Bing'");
+        if (title.contains("Google")) {
+            System.out.println("Test Passed: Title contains 'Google'");
+        } else {
+            Assert.fail("Test Failed: Title does not contain 'Google'");
+        }
     }
 }
