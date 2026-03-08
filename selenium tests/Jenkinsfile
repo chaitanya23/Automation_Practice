@@ -19,17 +19,13 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('selenium tests') {
-                    bat 'mvn test'
-                }
+                bat 'mvn test'
             }
         }
 
         stage('Publish Results') {
             steps {
-                dir('selenium tests') {
-                    junit 'target/surefire-reports/*.xml'
-                }
+                junit 'target/surefire-reports/*.xml'
             }
         }
     }
