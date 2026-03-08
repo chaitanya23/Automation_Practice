@@ -25,20 +25,20 @@ pipeline {
             }
         }
 
-        stage('Publish Reports') {
-            steps {
-                dir('playwright tests') {
-                    publishHTML(target: [
-                        allowMissing: false,
-                        alwaysLinkToLastBuild: true,
-                        keepAll: true,
-                        reportDir: 'playwright-report',
-                        reportFiles: 'index.html',
-                        reportName: 'Playwright Sample Test Report'
-                    ])
-                }
-            }
-        }
+        // stage('Publish Reports') {
+        //     steps {
+        //         dir('playwright tests') {
+        //             publishHTML(target: [
+        //                 allowMissing: false,
+        //                 alwaysLinkToLastBuild: true,
+        //                 keepAll: true,
+        //                 reportDir: 'playwright-report',
+        //                 reportFiles: 'index.html',
+        //                 reportName: 'Playwright Sample Test Report'
+        //             ])
+        //         }
+        //     }
+        // }
     }
 
     post {
