@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven3'
+    }
+
+
     stages {
         stage('Checkout') {
             steps {
@@ -19,11 +24,10 @@ pipeline {
 
         stage('Test') {
             steps {
-<<<<<<<<< Temporary merge branch 1
+
                 dir('selenium tests') {
                     bat 'mvn test'
                 }
-=========
               
             }
         }
