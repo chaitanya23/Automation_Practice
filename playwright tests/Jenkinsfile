@@ -10,7 +10,7 @@ pipeline {
 
         stage('Go to Playwright Folder') {
             steps {
-                dir('playwright tests') {
+                dir('playwright tests/tests') {
                     bat 'npm ci'
                 }
             }
@@ -18,7 +18,7 @@ pipeline {
 
         stage('Install Playwright Browsers') {
             steps {
-                dir('playwright-tests') {
+                dir('playwright tests/tests') {
                     bat 'npx playwright install'
                 }
             }
@@ -26,7 +26,7 @@ pipeline {
 
         stage('Run Playwright Test') {
             steps {
-                dir('playwright-tests') {
+                dir('playwright tests/tests') {
                     bat 'npx playwright test tests/sampletests.spec.ts --project=chromium'
                 }
             }
