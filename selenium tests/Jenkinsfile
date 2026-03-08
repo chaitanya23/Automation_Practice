@@ -25,7 +25,9 @@ pipeline {
 
         stage('Publish Results') {
             steps {
-                junit 'target/surefire-reports/*.xml'
+                dir('selenium tests') {
+                    junit 'target/surefire-reports/*.xml'
+                }
             }
         }
     }
