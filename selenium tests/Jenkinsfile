@@ -19,8 +19,12 @@ pipeline {
 
         stage('Test') {
             steps {
+<<<<<<<<< Temporary merge branch 1
                 dir('selenium tests') {
-                bat 'mvn test'
+                    bat 'mvn test'
+                }
+=========
+              
             }
         }
 
