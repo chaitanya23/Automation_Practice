@@ -19,9 +19,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('selenium tests') {
-                    bat 'mvn test'
-                }
+                bat 'mvn test'
             }
         }
 
